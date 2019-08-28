@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: film.inventory.service
+---
+testFramework: spock
+sourceLanguage: kotlin
