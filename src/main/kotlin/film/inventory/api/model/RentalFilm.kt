@@ -1,3 +1,3 @@
 package film.inventory.api.model
 
-class RentalFilm(val id: String, val filmId: String, val name: String)
+class RentalFilm(val id: Long?, val filmId: String, val name: String)

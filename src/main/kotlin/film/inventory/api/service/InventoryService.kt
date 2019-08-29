@@ -2,20 +2,17 @@ package film.inventory.api.service
 
 import film.inventory.api.model.RentalFilm
 import io.reactivex.Single
-import javax.inject.Singleton
+import javax.validation.constraints.NotNull
 
-@Singleton
-class InventoryService {
+interface InventoryService {
 
-    fun getFilm(id: String): Single<RentalFilm> {
-        return Single.just(RentalFilm(id, "filmId", "Planet of the Apes"))
-    }
+    fun findById(@NotNull id: Long?): Single<RentalFilm>
 
-    fun getAllFilms(): Single<List<RentalFilm>> {
-        return Single.just(listOf(RentalFilm("1", "PLA01", "Planet of the Apes"), RentalFilm("2", "PLA01", "Planet of the Apes")))
-    }
+    fun save(@NotNull film: RentalFilm): Single<RentalFilm>
 
-    fun saveAndUpdateFilm(film: RentalFilm): Single<RentalFilm> {
-        return Single.just(film)
-    }
+    fun deleteById(id: Long?) : Single<Int>
+
+    fun findAll(): Single<List<RentalFilm>>
+
+    fun update(@NotNull id: Long?, film: RentalFilm): Single<RentalFilm>
 }

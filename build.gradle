@@ -23,6 +23,9 @@ configurations {
 }
 
 dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:1.2.40"
+    compile 'org.mongodb:mongodb-driver:3.8.1'
+
     implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "io.micronaut:micronaut-http-client"
     implementation "io.micronaut:micronaut-http-server-netty"
